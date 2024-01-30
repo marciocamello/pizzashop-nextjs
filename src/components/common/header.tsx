@@ -2,7 +2,7 @@
 
 import { Home, Pizza, UtensilsCrossed } from 'lucide-react'
 
-import { AccountMenu } from '../dashboard/account-menu'
+import { AccountMenu } from '../common/account-menu'
 import { ThemeToggle } from '../theme/theme-toggle'
 import { Separator } from '../ui/separator'
 import { NavLink } from './nav-link'
