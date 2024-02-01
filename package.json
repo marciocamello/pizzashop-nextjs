@@ -1,6 +1,7 @@
 {
   "name": "pizzashop",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,8 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "generate": "drizzle-kit generate:pg",
-    "migrate": "bun src/db/migrate.ts",
-    "seed": "bun src/db/seed.ts"
+    "migrate": "node --env-file=.env.local --experimental-specifier-resolution=node --loader ts-node/esm src/db/migrate.ts",
+    "seed": "node --env-file=.env.local --experimental-specifier-resolution=node --loader ts-node/esm src/db/seed.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -32,15 +33,11 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4",
-    "@elysiajs/cookie": "^0.7.0",
-    "@elysiajs/cors": "^0.7.2",
-    "@elysiajs/jwt": "^0.7.0",
     "@paralleldrive/cuid2": "2.2.2",
     "@react-email/components": "^0.0.11",
     "dayjs": "^1.11.10",
     "drizzle-orm": "^0.29.1",
     "drizzle-typebox": "^0.1.1",
-    "elysia": "0.7.29",
     "postgres": "3.4.3",
     "resend": "^2.0.0"
   },
@@ -58,7 +55,6 @@
     "typescript": "^5",
     "@faker-js/faker": "8.3.1",
     "@types/pg": "8.10.9",
-    "bun-types": "^1.0.14",
     "chalk": "5.3.0",
     "drizzle-kit": "0.20.6",
     "eslint-plugin-drizzle": "^0.2.1",
